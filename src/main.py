@@ -1,4 +1,5 @@
 import streamlit as st
+from resume_generator import generate_fun_resume 
 
 st.set_page_config(
     page_title="Fun Resume Generator",
@@ -39,4 +40,6 @@ with st.container():
         ],
     )
     if st.button("Generate my resume 🚀"):
-        st.success("Your fun resume is coming soon!")
+        massage =  generate_fun_resume(name, job, age, skills, hobbies, personality)
+        st.subheader("Your Fun Resume")
+        st.write(massage)
